@@ -1,0 +1,10 @@
+# Application configuration variables
+
+development:
+  SECRET_KEY_BASE: 'dev'
+
+test:
+  SECRET_KEY_BASE: 'test'
+
+production:
+  SECRET_KEY_BASE: 'something-really-random-as-it-s-the-seed-of-all-cookies-and-stuff'
