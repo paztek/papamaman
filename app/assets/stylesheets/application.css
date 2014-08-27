@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require bootstrap-sass-official/assets/stylesheets/bootstrap.scss
+ *= require ionicons/css/ionicons.css
  *= require_tree .
  */

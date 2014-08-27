@@ -1,1 +1,0 @@
-papamaman = angular.module('papamaman', [])

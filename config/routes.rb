@@ -5,6 +5,9 @@ Papamaman::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  # Serve AngularJS templates
+  get '/views/:path.html' => 'templates#page', :constraints => { :path => /.+/  }
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

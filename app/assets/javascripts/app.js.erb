@@ -1,0 +1,45 @@
+var app = angular.module('papamaman', ['ngRoute', 'Satellizer']);
+
+// Configuration variables
+app.constant('settings', {
+    'FACEBOOK_APP_ID': <%= ENV['FACEBOOK_APP_ID'] %>
+});
+
+// Configuration
+app.config(function($authProvider, $routeProvider, settings) {
+
+    // Authentication
+    $authProvider
+        .facebook({
+            clientId: settings['FACEBOOK_APP_ID']
+        });
+
+    // Routing
+    $routeProvider
+            .when('/', {
+                controller: 'HomeCtrl',
+                templateUrl: 'views/home/index.html'
+            })
+            .when('/login', {
+                controller: 'LoginCtrl',
+                templateUrl: 'views/auth/login.html'
+            })
+            .when('/signup', {
+                controller: 'SignupCtrl',
+                templateUrl: 'views/auth/signup.html'
+            })
+            .when('/logout', {
+                controller: 'LogoutCtrl',
+                templateUrl: null
+            })
+            .when('/profile', {
+                templateUrl: 'views/users/profile.html',
+                controller: 'ProfileCtrl',
+                protected: true
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    ;
+});
+

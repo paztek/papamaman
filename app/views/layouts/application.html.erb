@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="papamaman">
 <head>
   <title>Papamaman</title>
   <%= stylesheet_link_tag    "application", media: "all"%>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-default navbar-static-top">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/"><i class="ion-ios7-pulse-strong"></i> Papamaman</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li><a href="/">Home</a></li>
+    <li ng-if="isAuthenticated"><a href="/#/profile">Profile</a></li>
+  </ul>
+  <ul ng-if="!isAuthenticated" class="nav navbar-nav pull-right">
+    <li><a href="/#/login">Login</a></li>
+    <li><a href="/#/signup">Sign up</a></li>
+  </ul>
+  <ul ng-if="isAuthenticated" class="nav navbar-nav pull-right">
+    <li><a href="/#/logout">Logout</a></li>
+  </ul>
+</div>
+
+<div ng-view class="fadeZoom"></div>
 
 </body>
 </html>

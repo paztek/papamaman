@@ -12,5 +12,8 @@
  * about supported directives.
  *
  *= require angular/angular
+ *= require angular-route/angular-route
+ *= require satellizer
+ *
  *= require_tree .
  */
