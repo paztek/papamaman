@@ -27,8 +27,11 @@ module Papamaman
 
     # Add Bower-managed assets to the asset pipeline
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
-
-    #
     config.assets.paths << Rails.root.join("vendor","assets","bower_components","bootstrap-sass-official","assets","fonts")
+
+    # Devise no longer responds to JSON by default
+    config.to_prepare do
+      DeviseController.respond_to :html, :json
+    end
   end
 end

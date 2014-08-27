@@ -1,4 +1,4 @@
-var app = angular.module('papamaman', ['ngRoute', 'Satellizer']);
+var app = angular.module('papamaman', ['ngRoute', 'ngMessages', 'Satellizer']);
 
 // Configuration variables
 app.constant('settings', {
@@ -11,8 +11,11 @@ app.config(function($authProvider, $routeProvider, settings) {
     // Authentication
     $authProvider
         .facebook({
-            clientId: settings['FACEBOOK_APP_ID']
+            clientId: settings['FACEBOOK_APP_ID'],
+            url: '/users/auth/facebook'
         });
+    $authProvider.loginUrl = '/users/sign_in';
+    $authProvider.signupUrl = '/users.json';
 
     // Routing
     $routeProvider

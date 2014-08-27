@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="papamaman">
+<html>
 <head>
   <title>Papamaman</title>
   <%= stylesheet_link_tag    "application", media: "all"%>
@@ -24,7 +24,18 @@
   </ul>
 </div>
 
+<% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
 <div ng-view class="fadeZoom"></div>
+
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

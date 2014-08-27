@@ -16,7 +16,7 @@ RSpec.describe "The homepage", :type => :feature do
     visit root_path
     expect(page).not_to have_selector 'h1'
     name = 'Matthieu'
-    within 'div[ng-app="papamaman"]' do
+    within 'div[ng-view]' do
       fill_in 'name', :with => name
     end
     expect(page).to have_selector 'h1', text: "Hello, #{name}"
