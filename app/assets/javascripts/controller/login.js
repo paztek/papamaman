@@ -1,12 +1,14 @@
-app.controller('LoginCtrl', function($scope, $http, $location) {
+app.controller('LoginCtrl', function($rootScope, $scope, $http, $location) {
     $scope.login = function() {
 
         var data = { email: $scope.email, password: $scope.password };
+
         $http.post('/login', data)
             .success(function(data, status, headers, config) {
                 console.log('success');
                 console.log(data);
-                // TODO Store Authentication token
+
+                $rootScope.$emit('auth:login', data);
                 $location.path('/');
             })
             .error(function(data, status, headers, config) {

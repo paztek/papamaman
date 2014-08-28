@@ -22,14 +22,9 @@ app.config(function($routeProvider) {
                 controller: 'SignupCtrl',
                 templateUrl: 'views/authentication/signup.html'
             })
-            .when('/logout', {
-                controller: 'LogoutCtrl',
-                templateUrl: null
-            })
             .when('/profile', {
                 templateUrl: 'views/users/profile.html',
-                controller: 'ProfileCtrl',
-                protected: true
+                controller: 'ProfileCtrl'
             })
             .otherwise({
                 redirectTo: '/'
