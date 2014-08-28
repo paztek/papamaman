@@ -23,6 +23,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# Management of configuration through env variables
+gem 'figaro', github: 'laserlemon/figaro'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -31,9 +34,6 @@ end
 group :test, :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
-
-  # Management of configuration through env variables
-  gem 'figaro', github: 'laserlemon/figaro'
 
   # Integrate RSpec tests with Rails
   gem 'rspec-rails'
