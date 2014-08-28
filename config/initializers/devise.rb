@@ -152,7 +152,7 @@ Devise.setup do |config|
   # time the user will be asked for credentials again. Default is 30 minutes.
   # config.timeout_in = 30.minutes
 
-  # If true, expires auth token on session timeout.
+  # If true, expires authentication token on session timeout.
   # config.expire_auth_token_on_timeout = false
 
   # ==> Configuration for :lockable
@@ -256,5 +256,5 @@ Devise.setup do |config|
   #
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
-  # config.omniauth_path_prefix = '/my_engine/users/auth'
+  # config.omniauth_path_prefix = '/my_engine/users/authentication'
 end

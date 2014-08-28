@@ -1,11 +1,10 @@
-app.controller('SignupCtrl', function($scope, $http) {
+app.controller('SignupCtrl', function($scope, $http, $location) {
     $scope.signup = function() {
 
         var data = { email: $scope.email, password: $scope.password };
         $http.post('/signup', data)
             .success(function(data, status, headers, config) {
-                console.log('success');
-                console.log(data);
+                $location.path('/login');
             })
             .error(function(data, status, headers, config) {
                 console.log('error');

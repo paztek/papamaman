@@ -3,8 +3,8 @@ Papamaman::Application.routes.draw do
   # Authentication, we remove all routes and only add the one we need
   devise_for :users, :skip => :all
   as :user do
-    #post '/login' => 'sessions#create', :as => 'user_session', :defaults => { :format => 'json' }
-    post '/signup' => 'registrations#create', :as => 'user_registration', :defaults => { :format => 'json' }
+    post '/login' => 'authentication#login', :as => 'user_login', :defaults => { :format => 'json' }
+    post '/signup' => 'authentication#signup', :as => 'user_signup', :defaults => { :format => 'json' }
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
