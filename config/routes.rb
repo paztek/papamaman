@@ -1,7 +1,11 @@
 Papamaman::Application.routes.draw do
 
-  # Authentication
-  devise_for :users
+  # Authentication, we remove all routes and only add the one we need
+  devise_for :users, :skip => :all
+  as :user do
+    #post '/login' => 'sessions#create', :as => 'user_session', :defaults => { :format => 'json' }
+    post '/signup' => 'registrations#create', :as => 'user_registration', :defaults => { :format => 'json' }
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

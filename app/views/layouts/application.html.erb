@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="papamaman">
 <head>
   <title>Papamaman</title>
   <%= stylesheet_link_tag    "application", media: "all"%>
@@ -13,17 +13,12 @@
   </div>
   <ul class="nav navbar-nav">
     <li><a href="/">Home</a></li>
-    <% if user_signed_in? %>
-        <li><a href="#">Profile</a></li>
-    <% end %>
+    <li><a href="/#/profile">Profile</a></li>
   </ul>
   <ul class="nav navbar-nav pull-right">
-    <% if user_signed_in? %>
-        <li><a href="/users/sign_out">Logout</a></li>
-    <% else %>
-        <li><a href="/users/sign_in">Login</a></li>
-        <li><a href="/users/sign_up">Sign up</a></li>
-    <% end %>
+    <li><a href="/#/logout">Logout</a></li>
+    <li><a href="/#/login">Login</a></li>
+    <li><a href="/#/signup">Sign up</a></li>
   </ul>
 </div>
 

@@ -1,8 +1,15 @@
-app.controller('SignupCtrl', function($scope, $auth) {
+app.controller('SignupCtrl', function($scope, $http) {
     $scope.signup = function() {
-        $auth.signup({
-            email: $scope.email,
-            password: $scope.password
-        });
+
+        var data = { email: $scope.email, password: $scope.password };
+        $http.post('/signup', data)
+            .success(function(data, status, headers, config) {
+                console.log('success');
+                console.log(data);
+            })
+            .error(function(data, status, headers, config) {
+                console.log('error');
+                console.log(data);
+            });
     };
 });
