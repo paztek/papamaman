@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', function($scope, $location, AuthService) {
+app.controller('LoginCtrl', ['$scope', '$location', 'AuthService', function($scope, $location, AuthService) {
     $scope.login = function() {
 
         var credentials = { email: $scope.email, password: $scope.password };
@@ -9,4 +9,4 @@ app.controller('LoginCtrl', function($scope, $location, AuthService) {
                 return response;
             });
     };
-});
+}]);
