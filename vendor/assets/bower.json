@@ -3,10 +3,8 @@
   "dependencies": {
     "angular": "latest",
     "angular-route": "latest",
+    "angular-cookies": "latest",
     "angular-messages": "latest",
-    "angular-resource": "latest",
-    "angular-animate": "latest",
-    "angular-strap": "latest",
     "bootstrap-sass-official": "latest",
     "ionicons": "latest",
     "satellizer": "latest"

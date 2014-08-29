@@ -1,8 +1,9 @@
-app.controller('SignupCtrl', function($scope, $http, $location) {
+app.controller('SignupCtrl', function($scope, $location, AuthService) {
     $scope.signup = function() {
 
-        var data = { email: $scope.email, password: $scope.password };
-        $http.post('/signup', data)
+        var infos = { email: $scope.email, password: $scope.password };
+
+        AuthService.signup(infos)
             .success(function(data, status, headers, config) {
                 $location.path('/login');
             })

@@ -1,19 +1,12 @@
-app.controller('LoginCtrl', function($rootScope, $scope, $http, $location) {
+app.controller('LoginCtrl', function($scope, $location, AuthService) {
     $scope.login = function() {
 
-        var data = { email: $scope.email, password: $scope.password };
+        var credentials = { email: $scope.email, password: $scope.password };
 
-        $http.post('/login', data)
-            .success(function(data, status, headers, config) {
-                console.log('success');
-                console.log(data);
-
-                $rootScope.$emit('auth:login', data);
+        AuthService.login(credentials)
+            .then(function(response) {
                 $location.path('/');
-            })
-            .error(function(data, status, headers, config) {
-                console.log('error');
-                console.log(data.message);
+                return response;
             });
     };
 });

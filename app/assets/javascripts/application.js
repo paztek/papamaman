@@ -13,6 +13,7 @@
  *
  *= require angular/angular
  *= require angular-route/angular-route
+ *= require angular-cookies/angular-cookies
  *= require angular-messages/angular-messages
  *
  *= require_tree .
