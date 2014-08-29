@@ -1,20 +1,25 @@
 Papamaman::Application.routes.draw do
 
-  # Authentication, we remove all routes and only add the one we need
-  devise_for :users, :skip => :all
-  as :user do
-    post '/login' => 'authentication#login', :as => 'user_login', :defaults => { :format => 'json' }
-    post '/signup' => 'authentication#signup', :as => 'user_signup', :defaults => { :format => 'json' }
+  namespace 'api', :format => :json do
+    post '/login' => 'authentication#login', :as => 'api_user_login', :defaults => { :format => 'json' }
+    post '/signup' => 'authentication#signup', :as => 'api_user_signup', :defaults => { :format => 'json' }
   end
+
+  # Authentication, we remove all routes and only add the one we need
+  #devise_for :users, :skip => :all
+  #as :user do
+  #  post '/login' => 'authentication#login', :as => 'user_login', :defaults => { :format => 'json' }
+  #  post '/signup' => 'authentication#signup', :as => 'user_signup', :defaults => { :format => 'json' }
+  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  #root 'home#index'
 
   # Serve AngularJS templates
-  get '/views/:path.html' => 'templates#page', :constraints => { :path => /.+/  }
+  #get '/views/:path.html' => 'templates#page', :constraints => { :path => /.+/  }
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
