@@ -1,4 +1,4 @@
-app.controller('SignupCtrl', function($scope, $location, AuthService) {
+app.controller('SignupCtrl', ['$scope', '$location', 'AuthService', function($scope, $location, AuthService) {
     $scope.signup = function() {
 
         var infos = { email: $scope.email, password: $scope.password };
@@ -12,4 +12,4 @@ app.controller('SignupCtrl', function($scope, $location, AuthService) {
                 console.log(data);
             });
     };
-});
+}]);
