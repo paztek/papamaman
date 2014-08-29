@@ -57,4 +57,7 @@ end
 group :production do
   # Use PostgreSQL as the database for ActiveRecord
   gem 'pg'
+
+  # Enables serving assets in production and redirects the logger to STDOUT
+  gem 'rails_12factor'
 end
