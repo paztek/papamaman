@@ -21,8 +21,5 @@
 /log/*.log
 /tmp
 
-# Ignore Bower-managed frontend-dependencies
-/vendor/assets/bower_components
-
 # Ignore application configuration
 /config/application.yml
