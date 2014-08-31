@@ -17,6 +17,6 @@ app.factory('FlashService', ['$rootScope', function($rootScope) {
         getCurrentMessages: function() {
             return currentMessages;
         }
-    }
+    };
 
 }]);

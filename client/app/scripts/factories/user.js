@@ -24,5 +24,5 @@ app.factory('UserService', ['$cookieStore', function($cookieStore) {
                 }
             }
         }
-    }
+    };
 }]);
