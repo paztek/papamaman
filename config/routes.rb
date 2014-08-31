@@ -1,8 +1,10 @@
 Papamaman::Application.routes.draw do
 
   namespace 'api', :format => :json do
-    post '/login' => 'authentication#login', :as => 'api_user_login', :defaults => { :format => 'json' }
-    post '/signup' => 'authentication#signup', :as => 'api_user_signup', :defaults => { :format => 'json' }
+    namespace 'auth' do
+      post '/login' => 'authentication#login', :as => 'api_user_login', :defaults => { :format => 'json' }
+      post '/signup' => 'authentication#signup', :as => 'api_user_signup', :defaults => { :format => 'json' }
+    end
   end
 
   # Authentication, we remove all routes and only add the one we need

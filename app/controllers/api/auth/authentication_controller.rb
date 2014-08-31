@@ -1,8 +1,8 @@
-class Api::AuthenticationController < ApplicationController
+class Api::Auth::AuthenticationController < ApplicationController
 
   respond_to :json
 
-  # POST /api/signup
+  # POST /api/auth/signup
   def signup
     user = User.new(user_params)
     if user.save
@@ -13,7 +13,7 @@ class Api::AuthenticationController < ApplicationController
     end
   end
 
-  # POST /api/login
+  # POST /api/auth/login
   def login
     user = User.find_for_database_authentication(:email => params[:email])
     return invalid_login_attempt unless user

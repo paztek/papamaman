@@ -1,7 +1,9 @@
+'use strict';
+
 window.app = angular.module('papamaman', ['ngRoute', 'ngCookies', 'ngMessages']);
 
 // Configuration
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', 'flashProvider', function($routeProvider, flashProvider) {
 
     // Routing
     $routeProvider
@@ -24,6 +26,5 @@ app.config(['$routeProvider', function($routeProvider) {
             .otherwise({
                 redirectTo: '/'
             });
-    ;
 }]);
 

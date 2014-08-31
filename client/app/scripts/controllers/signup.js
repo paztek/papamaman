@@ -1,3 +1,5 @@
+'use strict';
+
 app.controller('SignupCtrl', ['$scope', '$location', 'AuthService', function($scope, $location, AuthService) {
     $scope.signup = function() {
 

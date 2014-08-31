@@ -1,3 +1,5 @@
+'use strict';
+
 app.directive('passwordStrength', function() {
     return {
         restrict: 'A',

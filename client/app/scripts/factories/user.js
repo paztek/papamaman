@@ -1,3 +1,5 @@
+'use strict';
+
 app.factory('UserService', ['$cookieStore', function($cookieStore) {
 
     var defaultUser = { isLoggedIn: false };
