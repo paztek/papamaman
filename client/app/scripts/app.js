@@ -3,7 +3,7 @@
 window.app = angular.module('papamaman', ['ngRoute', 'ngCookies', 'ngMessages']);
 
 // Configuration
-app.config(['$routeProvider', 'flashProvider', function($routeProvider, flashProvider) {
+app.config(['$routeProvider', function($routeProvider) {
 
     // Routing
     $routeProvider

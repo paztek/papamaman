@@ -1,8 +1,8 @@
 'use strict';
 
-app.controller('HeaderCtrl', ['$scope', '$location', 'UserService', function($scope, $location, UserService) {
+app.controller('HeaderCtrl', ['$scope', '$location', 'AuthService', 'UserService', function($scope, $location, AuthService, UserService) {
     $scope.logout = function() {
-        UserService.remove();
+        AuthService.logout();
         $location.path('/');
     };
 
