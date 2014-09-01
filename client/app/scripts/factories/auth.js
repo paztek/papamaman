@@ -26,5 +26,17 @@ app.factory('AuthService', ['$http', 'UserService', function($http, UserService)
         UserService.remove();
     };
 
+    auth.askResetPasswordInstructions = function(email) {
+        // Ask the server to send an email with instructions to reset the password
+        var infos = { email: email };
+        return $http.post('/api/auth/send-reset-password-instructions', infos);
+    };
+
+    auth.resetPassword = function(token, password) {
+        // Send the new password to the server along with the reset password token
+        var infos = { token: token, password: password };
+        return $http.post('/api/auth/reset-password', infos);
+    };
+
     return auth;
 }]);
