@@ -12,6 +12,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def as_json(options={})
+    options[:except] ||= :authentication_token
+    super
+  end
+
   private
 
   def generate_authentication_token
