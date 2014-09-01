@@ -1,18 +1,15 @@
 Papamaman::Application.routes.draw do
 
+  devise_for :users, :skip => [:all]
+
   namespace 'api', :format => :json do
     namespace 'auth' do
-      post '/login' => 'authentication#login', :as => 'api_user_login', :defaults => { :format => 'json' }
-      post '/signup' => 'authentication#signup', :as => 'api_user_signup', :defaults => { :format => 'json' }
+      post '/login' => 'authentication#login', :as => 'login', :defaults => { :format => 'json' }
+      post '/signup' => 'authentication#signup', :as => 'signup', :defaults => { :format => 'json' }
+      post '/send-reset-password-instructions' => 'authentication#send_reset_password_instructions', :as => 'send_reset_password_instructions', :defaults => { :format => 'json' }
+      post '/reset-password' => 'authentication#reset_password', :as => 'reset_password', :defaults => { :format => 'json' }
     end
   end
-
-  # Authentication, we remove all routes and only add the one we need
-  #devise_for :users, :skip => :all
-  #as :user do
-  #  post '/login' => 'authentication#login', :as => 'user_login', :defaults => { :format => 'json' }
-  #  post '/signup' => 'authentication#signup', :as => 'user_signup', :defaults => { :format => 'json' }
-  #end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

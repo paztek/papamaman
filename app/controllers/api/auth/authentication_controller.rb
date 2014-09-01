@@ -25,6 +25,12 @@ class Api::Auth::AuthenticationController < ApplicationController
     end
   end
 
+  # POST /api/auth/send-reset-password-instructions
+  def send_reset_password_instructions
+    User.send_reset_password_instructions({ :email => params[:email] })
+    render :json => { :message => 'We just sent you an email with a link to reset your password' }, :status => 200
+  end
+
   protected
 
   def user_params

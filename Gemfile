@@ -32,6 +32,9 @@ group :doc do
 end
 
 group :test, :development do
+  # Use MailCatcher to catch emails and display them
+  gem 'mailcatcher'
+
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 
